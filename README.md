@@ -4,6 +4,12 @@ Framework web para o nodeJs http://expressjs.com/pt-br/
 
 `npm install express --save`
 
+# Express Load
+
+Auto-Load de arquivos para o express https://github.com/jarradseers/express-load
+
+`npm install express-load --save`
+
 # EJS
 
 Linguagem de template client-side. Engine de view http://www.embeddedjs.com/
@@ -39,3 +45,6 @@ Driver de Mysql para nodejs https://github.com/mysqljs/mysql
 
     con.end();
 ```
+
+ 
+

@@ -1,6 +1,6 @@
 <html>
     <body>
-        <h1>Produtos</h1>
+        <h1>Livros</h1>
         <table>
             <thead>
                 <tr>
@@ -10,11 +10,11 @@
                 </tr>
             </thead>
             <tbody>
-            <% for(var i = 0; i<products.length; i++) { %>
+            <% for(var i = 0; i<books.length; i++) { %>
                 <tr>
-                    <td><%= products[i].id %></td>
-                    <td><%= products[i].title %></td>
-                    <td><%= products[i].price %></td>  
+                    <td><%= books[i].id %></td>
+                    <td><%= books[i].title %></td>
+                    <td><%= books[i].price %></td>  
                 </tr>
             <% } %>
             </tbody>
