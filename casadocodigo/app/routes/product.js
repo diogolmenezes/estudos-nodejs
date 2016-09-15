@@ -1,8 +1,8 @@
-var dbConnection = require('../infra/connection');
+var connectionFactory = require('../infra/connectionFactory');
 
 module.exports = function (app) { 
     app.get('/produtos', function(request, response) {    
-        connection = dbConnection();
+        connection = connectionFactory();
 
         connection.query('select * from books', function(err, results) {
             if(err)
