@@ -1,5 +1,23 @@
 <html>
     <body>
         <h1>Produtos</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Título</th>
+                    <th>Preço</th>  
+                </tr>
+            </thead>
+            <tbody>
+            <% for(var i = 0; i<products.length; i++) { %>
+                <tr>
+                    <td><%= products[i].id %></td>
+                    <td><%= products[i].title %></td>
+                    <td><%= products[i].price %></td>  
+                </tr>
+            <% } %>
+            </tbody>
+        </table>
     </body>
 </html>

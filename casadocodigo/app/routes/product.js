@@ -4,10 +4,13 @@ module.exports = function (app) {
     app.get('/produtos', function(request, response) {    
         connection = dbConnection();
 
-        connection.query('', function(err, results) {
+        connection.query('select * from books', function(err, results) {
             if(err)
                 console.log(err);
-            response.render('products/index', { products: results });
+            
+            console.log('Books =>', results);
+
+            response.render('products/index',{ products: results });
         });
 
         connection.end();        
