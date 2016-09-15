@@ -5,6 +5,6 @@ module.exports = function() {
         host: 'localhost',
         user: 'root',
         password: '',
-        database: 'casadocodigo',
+        database: 'lojaNode',
     });
 };
