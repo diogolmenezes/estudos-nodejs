@@ -21,16 +21,32 @@ module.exports = function (app) {
     });
 
     app.get('/books/new', function(request, response) {
-        response.render('books/form');
+        response.render('books/form', { validationErrors: {}, book: {} });
     });
 
     app.post('/books/new', function(request, response) {
+        
+        var book = request.body;
+
+        request.assert('title', 'O Título é obrigatório').notEmpty();
+        request.assert('price', 'Formato inválido').isFloat();
+
+        var errors = request.validationErrors();
+
+        if(errors)
+        {            
+            response.format({
+                html: function() { response.status(400).render('books/form', { validationErrors: errors, book: book }); },
+                json: function() { response.status(400).json(errors); }
+            });
+                         
+            return;
+        }
+
         var connection = connectionFactory();
-        var repository = new booksRepository(connection);    
-        var book       = request.body;
+        var repository = new booksRepository(connection);   
 
         repository.insert(book, function(err, results) {
-
             if(err)
                 console.log(err);            
 

@@ -25,6 +25,12 @@ Faz o parse do body do request do express (request.body) https://github.com/expr
 
 `npm install body-parser --save`
 
+# Express Validator
+
+Validação de dados https://github.com/ctavan/express-validator
+
+`npm install express-validator --save`
+
 # Nodemon
 
 Lib para dar relload automatico, detectando mudanças e reiniciando o servidor http://nodemon.io/
@@ -55,5 +61,19 @@ Driver de Mysql para nodejs https://github.com/mysqljs/mysql
     con.end();
 ```
 
- 
+# Mocha (Testes)
+
+Framework para testes https://mochajs.org/
+
+`npm install mocha --save-dev`
+
+Rodando: 
+
+`node node_modules/mocha/bin/mocha`
+
+# Supertest 
+
+Assertions para teste HTTP  https://github.com/visionmedia/supertest
+
+`npm install supertest --save-dev`
 
