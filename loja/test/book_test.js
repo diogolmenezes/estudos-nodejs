@@ -1,16 +1,21 @@
-var express   = require('../config/express')();
-var supertest = require('supertest')(express);
 
-describe('booksController', function() {
-    
-    it('List respond with json', function(done) {
-        supertest.get('/books')
-                .set('Accept', 'application/json')
-                //.expect('Content-Type', /json/)
-                .expect(200, done);
-    });
-    
-    // Check com recursos de request padrão do node 
+var express     = require('express')();
+var request     = require('supertest')(express);
+var booksRoutes = require('../app/controller/booksController')(express);
+
+describe('GET /books', function() {
+  it('respond with json', function(done) {
+    request
+      .get('/books')
+      .set('Accept', 'application/json')            
+      .expect('Content-Type', /json/)
+      .expect(200, done);
+  });
+});
+
+
+// Check com recursos de request padrão do node
+// describe('booksController', function() {
     // var http   = require(http);
     // var assert = require('assert');
     // it('Listagem JSON', function(done) {
@@ -30,5 +35,4 @@ describe('booksController', function() {
     //         done();
     //     });
     // });
-
-});
+//});
