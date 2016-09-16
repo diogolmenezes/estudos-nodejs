@@ -1,0 +1,19 @@
+<html>
+    <body>
+        <h1>Livros</h1>
+        <form action="/livros/novo" method="POST">
+            <p>
+                <label for="title">Título:</label>
+                <input type="text" name="title" id="title" />
+            </p>
+            <p>
+                <label for="price">Preço:</label>
+                <input type="text" name="price" id="price" />
+            </p>
+            <p>
+                <input type="submit" value="Salvar" />
+                <a href="/livros">cancelar</a>
+            </p>
+        </form>
+    </body>
+</html>

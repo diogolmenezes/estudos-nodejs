@@ -4,17 +4,26 @@ Framework web para o nodeJs http://expressjs.com/pt-br/
 
 `npm install express --save`
 
-# Express Load
+# Express Load ou Consign
 
 Auto-Load de arquivos para o express https://github.com/jarradseers/express-load
 
 `npm install express-load --save`
+
+O projeto evoluiou para o Consign => https://www.npmjs.com/package/consign
 
 # EJS
 
 Linguagem de template client-side. Engine de view http://www.embeddedjs.com/
 
 `npm install ejs --save`
+
+
+# Body-Parser
+
+Faz o parse do body do request do express (request.body) https://github.com/expressjs/body-parser
+
+`npm install body-parser --save`
 
 # Nodemon
 
