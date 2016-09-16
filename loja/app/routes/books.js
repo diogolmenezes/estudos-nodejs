@@ -2,7 +2,7 @@ var booksRepository   = require('../repository/booksRepository')();
 var connectionFactory = require('../infra/connectionFactory');
 
 module.exports = function (app) { 
-    app.get('/livros', function(request, response) {   
+    app.get('/books', function(request, response) {   
         var connection = connectionFactory();
         
         repository = new booksRepository(connection);        
@@ -15,11 +15,11 @@ module.exports = function (app) {
         connection.end;
     });
 
-    app.get('/livros/novo', function(request, response) {
+    app.get('/books/new', function(request, response) {
         response.render('books/form');
     });
 
-    app.post('/livros/novo', function(request, response) {
+    app.post('/books/new', function(request, response) {
         var connection = connectionFactory();
         var repository = new booksRepository(connection);    
         var book       = request.body;
@@ -27,7 +27,7 @@ module.exports = function (app) {
         repository.insert(book, function(err, results) {
             if(err)
                 console.log(err);             
-            response.redirect('/livros');
+            response.redirect('/books');
         });
 
         connection.end();
