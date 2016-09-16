@@ -6,10 +6,15 @@ module.exports = function (app) {
         var connection = connectionFactory();
         
         repository = new booksRepository(connection);        
-        repository.list(function(err, results) {
+        
+        repository.list(function(err, results) {            
             if(err)
-                console.log(err);                    
-            response.render('books/index', { books: results });
+                console.log(err);            
+
+            response.format({
+                html: function() { response.render('books/index', { books: results }); },
+                json: function() { response.json(results); }
+            });              
         });        
 
         connection.end;
@@ -25,9 +30,14 @@ module.exports = function (app) {
         var book       = request.body;
 
         repository.insert(book, function(err, results) {
+
             if(err)
-                console.log(err);             
-            response.redirect('/books');
+                console.log(err);            
+
+            response.format({
+                html: function() { response.redirect('/books'); },
+                json: function() { response.send(200); }
+            }); 
         });
 
         connection.end();
