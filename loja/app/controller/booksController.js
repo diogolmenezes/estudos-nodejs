@@ -2,14 +2,14 @@ var booksRepository   = require('../repository/booksRepository')();
 var connectionFactory = require('../infra/connectionFactory');
 
 module.exports = function (app) { 
-    app.get('/books', function(request, response) {   
+    app.get('/books', function(request, response, next) {   
         var connection = connectionFactory();
         
         repository = new booksRepository(connection);        
         
         repository.list(function(err, results) {            
             if(err)
-                console.log(err);            
+                next(err);         
 
             response.format({
                 html: function() { response.render('books/index', { books: results }); },
@@ -24,7 +24,7 @@ module.exports = function (app) {
         response.render('books/form', { validationErrors: {}, book: {} });
     });
 
-    app.post('/books/new', function(request, response) {
+    app.post('/books/new', function(request, response, next) {
         
         var book = request.body;
 
@@ -48,7 +48,7 @@ module.exports = function (app) {
 
         repository.insert(book, function(err, results) {
             if(err)
-                console.log(err);            
+                next(err);             
 
             response.format({
                 html: function() { response.redirect('/books'); },
