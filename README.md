@@ -77,3 +77,15 @@ Assertions para teste HTTP  https://github.com/visionmedia/supertest
 
 `npm install supertest --save-dev`
 
+# Database Cleaner
+
+Limpeza de banco para testes https://github.com/emerleite/node-database-cleaner
+
+`npm install database-cleaner --save-dev`
+
+# WebSocket Socket.io
+
+Websockets http://socket.io/
+
+`npm install socket.io --save`
+

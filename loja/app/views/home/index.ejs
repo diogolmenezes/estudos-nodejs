@@ -1,0 +1,15 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="/css/site.css">
+    </head>
+    <body>
+        <h1>Loja</h1>
+        <script src="/socket.io/socket.io.js"></script>
+        <script>
+            var socket = io();
+            socket.on('newPromotion', function(data){
+                alert(data.text + ' - ' + data.book.id);
+            });
+        </script>
+    </body>
+</html>

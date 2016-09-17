@@ -17,7 +17,7 @@ module.exports = function (app) {
             });              
         });        
 
-        connection.end;
+        connection.end();
     });
 
     app.get('/books/new', function(request, response) {
