@@ -89,3 +89,10 @@ Websockets http://socket.io/
 
 `npm install socket.io --save`
 
+# Migrations node-db-migrate
+
+Database Migrations https://github.com/db-migrate/node-db-migrate
+
+`npm install db-migrate --save`
+
+

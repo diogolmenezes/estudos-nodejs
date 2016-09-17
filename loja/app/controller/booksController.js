@@ -8,8 +8,10 @@ module.exports = function (app) {
         repository = new booksRepository(connection);        
         
         repository.list(function(err, results) {            
-            if(err)
-                next(err);         
+            if(err) {
+                next(err);
+                return;
+            }         
 
             response.format({
                 html: function() { response.render('books/index', { books: results }); },
@@ -47,8 +49,10 @@ module.exports = function (app) {
         var repository = new booksRepository(connection);   
 
         repository.insert(book, function(err, results) {
-            if(err)
-                next(err);             
+            if(err) {
+                next(err);
+                return;
+            }             
 
             response.format({
                 html: function() { response.redirect('/books'); },
